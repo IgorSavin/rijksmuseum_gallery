@@ -13,9 +13,9 @@ export class Provider extends Component {
   }
 
   componentDidMount(){
-    axios.get(`https://www.rijksmuseum.nl/api/nl/collection?q=Q&key=${process.env.REACT_APP_MM_KEY}&format=json`)
+    axios.get(`https://www.rijksmuseum.nl/api/en/collection?q=Q&key=${process.env.REACT_APP_MM_KEY}&imgonly=true&format=json`)
     .then(res => {
-      console.log(res.data.artObjects);
+      // console.log(res.data.artObjects);
       this.setState({images: res.data.artObjects})
     })
     .catch(err => console.log(err));
