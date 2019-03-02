@@ -13,7 +13,7 @@ class Details extends Component {
       .get(
         `https://www.rijksmuseum.nl/api/en/collection/${
           this.props.match.params.id
-        }?q=Q&key=${process.env.REACT_APP_MM_KEY}&imgonly=true&format=json`
+        }?&key=${process.env.REACT_APP_MM_KEY}&imgonly=true&format=json`
       )
       .then(res => {
         console.log(res.data.artObject)
